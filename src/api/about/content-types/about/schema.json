@@ -4,7 +4,7 @@
   "info": {
     "singularName": "about",
     "pluralName": "abouts",
-    "displayName": "About",
+    "displayName": "Articles",
     "description": "Write about yourself and the content you create"
   },
   "options": {
@@ -15,9 +15,23 @@
     "title": {
       "type": "string"
     },
-    "blocks": {
-      "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+    "author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::author.author"
+    },
+    "content": {
+      "type": "blocks"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
